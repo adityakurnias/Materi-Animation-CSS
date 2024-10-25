@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Animation</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>CSS Animation</h1>
+      <p>Transition, Animation, dan Keyframe</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#transition">Transition</a></li>
+        <li><a href="#animation">Animation</a></li>
+        <li><a href="#keyframe">Keyframe</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="transition" class="section">
+        <h2>CSS Transition</h2>
+        <p>
+          CSS Transition memungkinkan perubahan nilai properti CSS terjadi
+          dengan halus selama durasi yang ditentukan.
+        </p>
+
+        <div class="demo-container">
+          <div class="demo">
+            <div class="transition-box"></div>
+            <p>
+              <b>Untuk membuat efek transisi, Kita harus menentukan dua hal:</b>
+            </p>
+            <ul>
+              <li>Properti CSS yang ingin di tambahkan efek</li>
+              <li>Durasi dari efeknya</li>
+            </ul>
+            <p>
+              Dalam kasus diatas kita nge transisiin 'transform' dan
+              'background' dengan waktu 300ms/0.3s
+            </p>
+            <p>Kita bisa aja pakai 'all' untuk mempersingkat</p>
+            <br />
+            <hr />
+            <div class="transition-box2"></div>
+            <p>Yang ini kita pakai 'all'</p>
+          </div>
+          <div class="code">
+            <pre><code class="language-css">.transition-box {
+    width: 100px;
+    height: 100px;
+    background: #6366f1;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.transition-box:hover {
+    transform: scale(1.2) rotate(45deg);
+    background: #4f46e5;
+}</code></pre>
+            <pre>
+  <code class="language-css">
+transition: all 0.3s ease;
+  </code>
+</pre>
+          </div>
+        </div>
+
+        <h3>Property dari Transition</h3>
+        <table class="property-table">
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+            <th>Deskripsi</th>
+          </tr>
+          <tr>
+            <td>transition-property</td>
+            <td>none | all | property-name</td>
+            <td>Menentukan properti CSS yang akan ditransisiin</td>
+          </tr>
+          <tr>
+            <td>transition-duration</td>
+            <td>time (bisa s atau ms, bebas)</td>
+            <td>Durasi transisi</td>
+          </tr>
+          <tr>
+            <td>transition-timing-function</td>
+            <td>
+              ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()
+            </td>
+            <td>Kurva kecepatan transisi</td>
+          </tr>
+          <tr>
+            <td>transition-delay</td>
+            <td>time (bisa s atau ms, bebas)</td>
+            <td>Waktu transisinya di tunda</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="animation" class="section">
+        <h2>CSS Animation</h2>
+        <p>
+          CSS Animation memungkinkan elemen dianimasi tanpa menggunakan
+          JavaScript atau trigger seperti hover, dan animation bisa kita bikin ngulang terus.
+        </p>
+
+        <div class="demo-container">
+          <div class="demo">
+            <div class="animation-box"></div>
+          </div>
+          <div class="code">
+            <pre><code class="language-css">.animation-box {
+    width: 100px;
+    height: 100px;
+    background: #8b5cf6;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}</code></pre>
+          </div>
+        </div>
+
+        <h3>Property Animation</h3>
+        <table class="property-table">
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+            <th>Deskripsi</th>
+          </tr>
+          <tr>
+            <td>animation-name</td>
+            <td>keyframename | none</td>
+            <td>Nama @keyframes yang digunakan</td>
+          </tr>
+          <tr>
+            <td>animation-duration</td>
+            <td>time (bisa s atau ms, bebas)</td>
+            <td>Durasi satu siklus animasi</td>
+          </tr>
+          <tr>
+            <td>animation-timing-function</td>
+            <td>ease | linear | ease-in | ease-out | ease-in-out | steps()</td>
+            <td>Kurva kecepatan animasi</td>
+          </tr>
+          <tr>
+            <td>animation-delay</td>
+            <td>time (bisa s atau ms, bebas)</td>
+            <td>Waktu tunda sebelum animasi dimulai</td>
+          </tr>
+          <tr>
+            <td>animation-iteration-count</td>
+            <td>number | infinite</td>
+            <td>Berapa kali animasi diulang</td>
+          </tr>
+          <tr>
+            <td>animation-direction</td>
+            <td>normal | reverse | alternate | alternate-reverse</td>
+            <td>Arah pemutaran animasi</td>
+          </tr>
+          <tr>
+            <td>animation-fill-mode</td>
+            <td>none | forwards | backwards | both</td>
+            <td>
+              Bagaimana animasi menerapkan gaya sebelum dan sesudah eksekusi
+            </td>
+          </tr>
+          <tr>
+            <td>animation-play-state</td>
+            <td>running | paused</td>
+            <td>Status pemutaran animasi</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="keyframe" class="section">
+        <h2>CSS Keyframe</h2>
+        <p>
+          @keyframes digunakan untuk mendefinisikan tahapan dalam
+          sebuah animasi CSS, nah keyframe gak bisa kalian pakai tanpa sebuah property 'animation' jadi mereka tuh dah pasangan.
+        </p>
+
+        <div class="demo-container">
+          <div class="demo">
+            <div class="keyframe-box"></div>
+            <br>
+            <p>'0%-100%' itu namanya <b>keyframe-selector</b>, disini kalian bebas mau kasih berapa keyframe-selectornya. Kalian juga bisa pake 'from' dan 'to' itu sama aja kayak '0%' dan '100%'</p>
+          </div>
+          <div class="code">
+            <pre><code class="language-css">.keyframe-box {
+    width: 100px;
+    height: 100px;
+    background: #ec4899;
+    animation: colorChange 4s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        background: #ec4899;
+        transform: scale(1);
+    }
+    25% {
+        background: #6366f1;
+        transform: scale(1.2);
+    }
+    50% {
+        background: #8b5cf6;
+        transform: scale(1);
+    }
+    75% {
+        background: #14b8a6;
+        transform: scale(1.2);
+    }
+    100% {
+        background: #ec4899;
+        transform: scale(1);
+    }
+}</code></pre>
+          </div>
+        </div>
+
+        <h3>Property Experimental</h3>
+        <table class="property-table">
+          <tr>
+            <th>Property</th>
+            <th>Status</th>
+            <th>Deskripsi</th>
+          </tr>
+          <tr>
+            <td>animatin-timeline</td>
+            <td><span class="experimental">Experimental</span></td>
+            <td>Properti CSS animation-timeline menentukan garis waktu yang digunakan untuk mengontrol kemajuan animasi CSS.</td>
+          </tr>
+          <tr>
+            <td>animatin-range</td>
+            <td><span class="experimental">Experimental</span></td>
+            <td>Mengatur awal dan akhir rentang lampiran animasi sepanjang garis waktunya</td>
+          </tr>
+        </table>
+        <p>Gua gak nyaranin kalian pake fitur experimental, karena fitur experimental biasanya fitur yang dikembangin browser tertenu jadi cuman beberapa browser yg support. Tunggu aja sampai di kembangin sama yang lain</p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Kalo penasaran kesini</a>
+      </section>
+    </main>
+
+    <script>
+      Prism.highlightAll();
+    </script>
+  </body>
+</html>
