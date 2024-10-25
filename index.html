@@ -220,6 +220,13 @@ transition: all 0.3s ease;
               bebas mau kasih berapa keyframe-selectornya. Kalian juga bisa pake
               'from' dan 'to' itu sama aja kayak '0%' dan '100%'
             </p>
+            <br><hr>
+            <div class="keyframe-box2"></div>
+            <br><br>
+            <ul>
+              <li><b>From-To:</b> Cocok untuk animasi sederhana dengan hanya 2 state (awal dan akhir)</li>
+              <li><b>Persen:</b> Lebih fleksibel untuk animasi kompleks dengan multiple states</li>
+            </ul>
           </div>
           <div class="code">
             <pre><code class="language-css">.keyframe-box {
@@ -251,6 +258,21 @@ transition: all 0.3s ease;
         transform: scale(1);
     }
 }</code></pre>
+<pre>
+  <code class="language-css">
+  
+  @keyframes colorChange {
+      from {
+          background: #ec4899;
+          transform: scale(1);
+      }
+      to {
+        background: #6366f1;
+        transform: scale(1.2);
+      }
+  }
+  </code>
+</pre>
           </div>
         </div>
 

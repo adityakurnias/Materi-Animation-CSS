@@ -137,7 +137,22 @@ h3 {
   width: 100px;
   height: 100px;
   background: #ec4899;
-  animation: colorChange 4s infinite;
+  animation: colorChange 1s infinite;
+}
+
+.keyframe-box2 {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  background: #ec4899;
+  animation: colorChange2 2s infinite;
+}
+
+@keyframes colorChange2 {
+  to {
+    background: #6366f1;
+    transform: scale(1.2);
+  }
 }
 
 @keyframes colorChange {
